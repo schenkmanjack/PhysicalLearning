@@ -16,7 +16,7 @@ class ActivationsInitializerBase(ABC):
         batch_size = x.size(0)
         u = [x]
         for dim in dims[1:]:
-            u.append(torch.randn(batch_size, dim, requires_grad=True).to(device))
+            u.append(torch.zeros(batch_size, dim, requires_grad=True).to(device))
         return u
     
     @staticmethod

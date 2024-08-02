@@ -26,7 +26,7 @@ ACTIVATIONS_INITIALIZER = ActivationsInitializerBase
 ACTIVATIONS_OPTIMIZER = ActivationsOptimizer
 BETA = 0.2
 EPSILON = 0.5
-EPSILON_VALIDATE = 0.2
+EPSILON_VALIDATE = 0.5
 NUM_ITERATIONS_VALIDATE = 1500
 NUM_ITERATIONS_FREE = 100 #25
 NUM_ITERATIONS_CLAMPED = 30 #10
@@ -36,9 +36,8 @@ NUM_EPOCHS = 1200
 BATCH_SIZE_TRAIN = 512
 BATCH_SIZE_TEST = 256
 # connection cutting
-CONNECTION_CUTTING_FRACTION = 0.1
-MASK_DURING_TRAINING = True
-MASK_WEIGHTS = False
+CONNECTION_CUTTING_FRACTION = 0.5
+MASK_DURING_TRAINING = False
 
 # create the confiuration 
 CONFIG = dict(
@@ -74,7 +73,6 @@ CONFIG = dict(
     ),
     connection_cutting_config=dict(
         fraction=CONNECTION_CUTTING_FRACTION,
-        mask_weights=MASK_WEIGHTS,
         mask_during_training=MASK_DURING_TRAINING,
     ),
 )
